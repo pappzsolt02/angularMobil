@@ -46,9 +46,9 @@ export class ProductDetailsComponent {
     if (this.product.price <= 0) {
       this.errorMessage += 'Kérem adja meg a termék árát! ';
     }
-    if (!this.product.imageBase64) {
-      this.errorMessage += 'Kérem adja meg a termék kép URL-jét! ';
-    }
+    // if (!this.product.imageBase64) {
+    //   this.errorMessage += 'Kérem adja meg a termék kép URL-jét! ';
+    // }
     return !this.errorMessage;
   }
 
