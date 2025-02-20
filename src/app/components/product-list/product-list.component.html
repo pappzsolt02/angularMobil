@@ -1,0 +1,29 @@
+<h2>Terméklista</h2>
+<table>
+  <thead>
+    <tr>
+      <th>
+        <button class="new" (click)="newProduct()">Új termék</button>
+      </th>
+      <th>Termék neve</th>
+      <th>Ár (Ft)</th>
+    </tr>
+  </thead>
+  <tbody id="productTable">
+    @for (product of products; track $index) {
+    <tr>
+      <td>
+        <span class="icon edit" (click)="editProduct(product)">✏️</span>
+        <span class="icon delete" (click)="deleteProduct(product)">🗑️</span>
+      </td>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+    </tr>
+    }
+  </tbody>
+</table>
+
+@if (productUnderEdit) {
+<app-product-details [product]="productUnderEdit" (canceled)="productUnderEdit=null" (saved)="saved($event)">
+</app-product-details>
+}

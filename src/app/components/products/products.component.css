@@ -1,0 +1,68 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 8px auto;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    width: 300px;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 8px 8px 0 0;
+    margin: 12px;
+}
+
+.card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+    margin: 12px;
+    text-align: justify;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff;
+    margin: 10px 0;
+}
+
+.cart-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 75%;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cart-btn:hover {
+    background-color: #218838;
+}
+
+.cart-btn:disabled {
+    background-color: #777;
+    cursor: not-allowed;
+    color: #333;
+}

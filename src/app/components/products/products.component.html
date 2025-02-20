@@ -1,0 +1,13 @@
+<div class="container">
+    @for(product of products; track $index) {
+        <div class="card">
+            <h3>{{product.name}}</h3>
+            <img [src]="configService.apiUrl + '/Product/image/' + product.id.toString()">
+            <p>{{product.description}}</p>
+            <div class="price">{{product.price}} Ft</div>
+            <button class="cart-btn" [disabled]="!authService.loggedinUser?.roles?.includes('user')" (click)="order(product.id)">
+                Megrendelés
+            </button>
+        </div>
+    }
+</div>

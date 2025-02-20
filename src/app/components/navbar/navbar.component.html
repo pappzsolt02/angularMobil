@@ -1,0 +1,19 @@
+<nav class="navbar">
+    <div class="menu">
+        <h3>Mobil webshop</h3>
+        <a routerLink="products" routerLinkActive="selected">Termékek</a>
+        <a routerLink="orders" routerLinkActive="selected">Megrendelések</a>
+        <a routerLink="admin" routerLinkActive="selected">Admin</a>
+    </div>
+    @if (!authService.loggedinUser) {
+        <a routerLink="login" routerLinkActive="selected">Login</a>
+    } @else 
+    {
+        <div class="user-menu">
+            <a>{{authService.loggedinUser.name}}</a>
+            <div class="dropdown" id="dropdownMenu">
+                <a (click)="logout()">Kijelentkezés</a>
+            </div>
+        </div>
+    }
+</nav>

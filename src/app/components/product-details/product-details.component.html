@@ -1,0 +1,23 @@
+<div class="background">
+
+</div>
+<div class="container">
+  <div class="form-container">
+    <div class="close-btn" (click)="canceled.emit()">X</div>
+    <h2>Termék hozzáadása</h2>
+    <form id="productForm">
+      @if(product){
+      <input type="text" name="productName" placeholder="Termék neve" required [(ngModel)]="product.name">
+      <textarea name="productDescription" placeholder="Leírás" rows="4" required
+        [(ngModel)]="product.description"></textarea>
+      <input type="number" name="productPrice" placeholder="Ár (Ft)" required [(ngModel)]="product.price">
+      <input type="file" name="productImage" accept="image/*" (change)="imageChanged($event)">
+      <button type="submit" (click)="save()">{{product.id ? 'Mentés' : 'Hozzáadaás'}}</button>
+      @if (errorMessage) {
+      <div class="error">{{errorMessage}}</div>
+      }
+      }
+    </form>
+
+  </div>
+</div>
